@@ -1,74 +1,110 @@
-import React from 'react';
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBCard,
-  MDBCardBody,
-  MDBCol,
-  MDBRow,
-  MDBInput,
-  MDBCheckbox,
-  MDBIcon
-}
-from 'mdb-react-ui-kit';
+import { FormControl, FormLabel, Input,
+    VStack, 
+    InputGroup,
+    InputRightElement,
+    Button,
+    Icon, 
+    Box,
+    Container,
+    Text,
+} from '@chakra-ui/react';
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
+import React, { useState } from 'react'
 
-function SignupPage() {
+const SignupPage = () => {
+    const [show, setShow] = useState(false);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [pic, setPic] = useState(undefined);
+    const [loading, setLoading] = useState(false);
+    // const toast = useToast();
+    // const history = useHistory();
+
   return (
-    <MDBContainer fluid>
-
-      <div className="p-5 bg-image" style={{backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px'}}></div>
-
-      <MDBCard className='mx-5 mb-5 p-5 shadow-5' style={{marginTop: '-100px', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)'}}>
-        <MDBCardBody className='p-5 text-center'>
-
-          <h2 className="fw-bold mb-5">Sign up now</h2>
-
-          <MDBRow>
-            <MDBCol col='6'>
-              <MDBInput wrapperClass='mb-4' label='First name' id='form1' type='text'/>
-            </MDBCol>
-
-            <MDBCol col='6'>
-              <MDBInput wrapperClass='mb-4' label='Last name' id='form1' type='text'/>
-            </MDBCol>
-          </MDBRow>
-
-          <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email'/>
-          <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password'/>
-
-          <div className='d-flex justify-content-center mb-4'>
-            <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
-          </div>
-
-          <MDBBtn className='w-100 mb-4' size='md'>sign up</MDBBtn>
-
-          <div className="text-center">
-
-            <p>or sign up with:</p>
-
-            <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
-              <MDBIcon fab icon='facebook-f' size="sm"/>
-            </MDBBtn>
-
-            <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
-              <MDBIcon fab icon='twitter' size="sm"/>
-            </MDBBtn>
-
-            <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
-              <MDBIcon fab icon='google' size="sm"/>
-            </MDBBtn>
-
-            <MDBBtn tag='a' color='none' className='mx-3' style={{ color: '#1266f1' }}>
-              <MDBIcon fab icon='github' size="sm"/>
-            </MDBBtn>
-
-          </div>
-
-        </MDBCardBody>
-      </MDBCard>
-
-    </MDBContainer>
-  );
+    <div>
+      <Container maxW='xl' centerContent >
+      <Box
+      bg="white"
+      display="flex"
+      flexDir="column"
+      alignItems="center"
+      justifyContent="center"
+      // width="100%"
+      padding="40px"
+      borderRadius="lg"
+      borderWidth="1px"
+      marginBottom="20px"   
+    >
+      <Text fontSize="4xl" fontFamily="work sans" color="black" marginBottom="40px">Sign Up</Text>
+        <VStack spacing="5px">
+            <FormControl id="name" isRequired>
+                <FormLabel>Name</FormLabel>
+                <Input type='text' placeholder='Enter your name' value={name} onChange={(e) => setName(e.target.value)} />
+            </FormControl>
+            <FormControl id="email" isRequired>
+                <FormLabel>Email</FormLabel>
+                <Input type='email' placeholder='Enter your email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                {/* {!isError ? (
+                    <FormHelperText>
+                    Enter the email you'd like to receive the newsletter on.
+                    </FormHelperText>
+                ) : (
+                    <FormErrorMessage>Email is required.</FormErrorMessage>
+                )} */}
+            </FormControl>
+            <FormControl id="password" isRequired>
+                <FormLabel>Password</FormLabel>
+                <InputGroup>
+                    <Input type={show?'text':'password'} placeholder='Enter your password' value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <InputRightElement >
+                        <Icon 
+                            h="1.75rem"
+                            size="sm"
+                            cursor="pointer"
+                            onClick={(e)=> setShow(!show)}
+                        >
+                            {show?<ViewOffIcon />: <ViewIcon />}
+                        </Icon>
+                    </InputRightElement>
+                </InputGroup>
+            </FormControl>
+            <FormControl isRequired>
+                <FormLabel>Confirm password</FormLabel>
+                <InputGroup>
+                    <Input type={show?'text':'password'} placeholder='Enter confirm password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                    <InputRightElement>
+                        <Icon h="1.75rem" size="sm" cursor="pointer" onClick={(e)=> setShow(!show)}>
+                            {show?<ViewOffIcon />: <ViewIcon />}
+                        </Icon>
+                    </InputRightElement>
+                </InputGroup>
+            </FormControl>
+            <FormControl>
+                <FormLabel>Upload your picture</FormLabel>
+                <Input 
+                    height="100%"
+                    type='file'
+                    p="0"
+                    margin="0"
+                    accept='image/*'
+                    defaultValue={pic || ''}
+                />
+            </FormControl>
+            <Button
+                colorScheme='blue'
+                width="100%"
+                marginTop={15}
+                isLoading={loading}
+            >
+                Sign Up
+            </Button>
+        </VStack>
+        </Box>
+        </Container>
+    </div>
+  )
 }
 
-export default SignupPage
+export default SignupPage;

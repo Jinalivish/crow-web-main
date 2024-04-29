@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+px-3 py-2 rounded-md border-cyan-900 hover:bg-cyan-800 hover:text-white text-cyan-900
+.simple-button {
+  padding: 3px 2px;
+  border-radius: 2px;
+  color: cyan.900;
+}
+.simple-button:hover {   
+  border: 2px solid cyan.800;
+  border-radius: 2px;
+  color: white;
+}

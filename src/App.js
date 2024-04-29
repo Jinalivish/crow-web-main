@@ -8,6 +8,7 @@ import './App.css'; // Tailwind CSS import
 import SubTopic from './components/SubTopic';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+
 const App = () => {
   return (
     <Router>
@@ -21,8 +22,8 @@ const App = () => {
 
         <Route path='/topic/subTopic' element={<SubTopic/>}/> 
          <Route path="/topic/:topicId" element={<TopicPage />} />
-         <Route path='/Login' element={<LoginPage />} /> 
-         <Route path='/Signup' element={<SignupPage/>}/>
+         <Route path='/login' element={<LoginPage />} /> 
+         <Route path='/signup' element={<SignupPage/>}/>
           {/* ... other routes */}
       
         </Routes>
