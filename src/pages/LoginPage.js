@@ -11,6 +11,7 @@ import { FormControl, FormLabel, Input,
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import React, { useState } from 'react'; 
+import './Login.css'
 
 function LoginPage() {
 

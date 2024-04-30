@@ -15,15 +15,89 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.main-cards{
+  justify-content: center;
+  display: flex;
+  flex-direction: row !important;
+}
+.subcard{
+  padding: 2rem ;
+  max-width: 1536px;
+  width: 80%;
+}
+.nav-arrow
+{
+display: none;
+}
+.rowsubcard{
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+  justify-content: space-between;
+  display: flex;
+}
+.navsubtopic{
+  padding-left: unset;
+}
+.px2 {
+  padding-right: .5rem;
+  padding-left: .5rem;
+}
 
 /* mobile view */
-@media (max-width:600px)
+@media (max-width:835px)
 {
+  .nav-arrow
+{
+display: unset !important;
+padding-right: 14px;
+
+}
   .navtopic{
     display: inline;
   }
   .navsubtopic{
     display: contents;
   }
-  
+  .w-1\/5 {
+    width: 100%;
+   
+}
+.h-screen {
+  height: 52vh;
+  margin-bottom: 27px;
+  padding-right: 2.5rem !important;
+  padding-left: 2.5rem !important;
+}
+/* .max-w-screen-2xl {
+  max-width: unset !important;
+} */
+
+.main-cards{
+  justify-content: unset;
+  display: unset !important;
+  flex-direction: row !important;
+}
+.subcard{
+  padding: 2rem ;
+  max-width: unset;
+  width: 100%;
+}
+.rowsubcard{
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+  justify-content: space-between;
+  display: unset;
+}
+
+.space-x-8 > :not([hidden]) ~ :not([hidden]) {
+ 
+  margin-left: unset;
+}
+.px2 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.gap-8 {
+  gap: 1rem;
+}
 }

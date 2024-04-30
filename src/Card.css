@@ -1,0 +1,15 @@
+.main-cards{
+
+}
+
+
+/* mobile view */
+@media (max-width:600px)
+{
+    .w-1\/5 {
+        width: 100%;
+       
+    }
+  
+}
+

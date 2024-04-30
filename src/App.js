@@ -18,10 +18,8 @@ const App = () => {
         <Routes>
 
         <Route path="/" element={<Home />} />
-        {/* <Route path='/:topicId' element={<TopicPage/>}/> */}
-
-        <Route path='/topic/subTopic' element={<SubTopic/>}/> 
-         <Route path="/topic/:topicId" element={<TopicPage />} />
+        <Route path='/:topic/:subtopic' element={<TopicPage/>}/> 
+         {/* <Route path="/topic/:topicId" element={<TopicPage />} /> */}
          <Route path='/login' element={<LoginPage />} /> 
          <Route path='/signup' element={<SignupPage/>}/>
           {/* ... other routes */}

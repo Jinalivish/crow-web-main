@@ -60,9 +60,9 @@ const Home = () => {
             <b className="text-3xl pl-8 pr-8 ">CROW REPORT</b>
             {/* ... additional content ... */}
             
-            <div className='flex flex-row justify-center'>
-                <div className='topics w-4/5 p-8 max-w-screen-2xl'>
-                    <div className='flex justify-between space-x-8 px-4'>
+            <div className='main-cards'>
+                <div className='subcard'>
+                    <div className='rowsubcard space-x-8'>
                         <Card 
                         title="Noteworthy technology acquisitions 2021" 
                         content={card1}
@@ -82,7 +82,7 @@ const Home = () => {
                         <CarouselComponent images={imageUrls1}/>
                     </div>
 
-                    <div className='flex justify-between space-x-8 px-4'>
+                    <div className='rowsubcard space-x-8'>
                         <Card 
                         title="Noteworthy technology acquisitions 2021" 
                         content={card1}
@@ -102,7 +102,7 @@ const Home = () => {
                         <CarouselComponent images={imageUrls2}/>
                     </div>
 
-                    <div className='flex justify-between space-x-8 px-4'>
+                    <div className='rowsubcard space-x-8'>
                         <Card 
                         title="Noteworthy technology acquisitions 2021" 
                         content={card1}

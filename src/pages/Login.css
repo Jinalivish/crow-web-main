@@ -1,0 +1,23 @@
+*,
+*::before,
+::after {
+  border-color:#1e293b !important;
+}
+
+
+.css-7pjl54 {
+    padding: 85px !important;
+}
+.mt-35{
+    margin-top: 35px;
+}
+.css-22bnw2{
+    width: 350px;
+}
+.css-1g6qqxs{
+    background:#1e293b !important;
+}
+.css-1g6qqxs:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgb(107 114 128 / var(--tw-bg-opacity)) !important;
+}

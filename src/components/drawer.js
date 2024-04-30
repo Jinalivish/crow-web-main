@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown, faAngleRight, faAngleUp, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+
 
 const DrawerMenu = () => {
   // An example list of topics and subtopics
@@ -44,14 +47,38 @@ const DrawerMenu = () => {
     <div className="bg-slate-800 min-w-max">
       <ul className="flex flex-wrap items-center justify-around space-y-2 navtopic">
         {menuItems.map((item, index) => (
-          <div>
-           <Link to ="/"> 
-            <li  key={item.topic} className="relative ">
+          
+          //  <Link to ="/"> 
+            <li  key={item.topic} className="relative "
+            onMouseOver={() => setActiveIndex(index)}
+            onMouseLeave={()=> setActiveIndex(null)}>
             <button 
               onClick={() => handleTopicClick(index)}
               className="flex justify-between items-center w-full text-left"
             >
-              {item.topic}
+               {item.topic}
+               <div class="nav-arrow">
+            
+  {/* Toggle button */}
+  {index === 0 && (
+                 <div className="nav-arrow">
+                   <FontAwesomeIcon icon={activeIndex === 0 ? faTimes : faBars} onClick={() => handleTopicClick(0)} />
+                 </div>
+               )}
+               {/* Close button */}
+               {index !== 0 && activeIndex === index && (
+                 <div className="nav-arrow">
+                   <FontAwesomeIcon icon={faTimes} onClick={() => setActiveIndex(null)} />
+                 </div>
+               )}
+               {/* Arrow icon */}
+               {index !== 0 && activeIndex !== index && (
+                 <div className="nav-arrow">
+                   <FontAwesomeIcon icon={faAngleDown} />
+                 </div>
+               )}
+
+        </div>
             </button>
             {/* Underline for topic */}
             <div className="h-1 bg-black w-full"></div>
@@ -68,8 +95,8 @@ const DrawerMenu = () => {
               </ul>
             )}
           </li>
-          </Link>
-          </div>
+          // </Link>
+          
         ))}
       </ul>
     </div>

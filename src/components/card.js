@@ -11,7 +11,7 @@ const Card = ({ title, content }) => (
     </p>
 );
 
-const CardsContainer = ({ title, content }) => ( // Destructure the props correctly here
+const CardsContainer = ({ title, content }) => ( 
     <div className="flex flex-col">
         <Card title={title} content={content} />
     </div>

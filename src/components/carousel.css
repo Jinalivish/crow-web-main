@@ -2,29 +2,20 @@
 .slick-arrow {
     position: absolute;
     top: 50%;
-    width: 40px;
-    /* Set width as needed */
-    height: 40px;
-    /* Set height as needed */
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Background color */
+    width: 33px;
+    height: 35px;
+    background-color: #1e293b !important;
     border: none;
     border-radius: 50%;
-    /* Make it round */
-    /* Text color */
-    font-size: 20px;
-    /* Font size */
+    font-size: 17px;
     line-height: 40px;
-    /* Vertical centering */
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
     
 }
 /* Styles for the previous button */
-/* Styles for the previous button */
-/* Styles for the previous button */
-/* Styles for the previous button */
+
 .slick-prev {
     left: 10px;
     z-index: 9999;
@@ -41,13 +32,9 @@
 @media (max-width: 768px) {
     .slick-arrow {
         width: 30px;
-        /* Adjust width for smaller screens */
         height: 30px;
-        /* Adjust height for smaller screens */
         font-size: 16px;
-        /* Adjust font size for smaller screens */
-        line-height: 30px;
-        /* Adjust line height for smaller screens */
+        line-height: 33px;
     }
 }
 

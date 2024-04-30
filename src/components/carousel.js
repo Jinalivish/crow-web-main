@@ -13,7 +13,15 @@ const CarouselComponent = ({ images }) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 768, // Breakpoint for mobile view
+        settings: {
+          slidesToShow: 1, // Show only one slide on mobile
+        }
+      }
+    ]
   };
 
   return (
@@ -21,9 +29,9 @@ const CarouselComponent = ({ images }) => {
       <Slider {...settings}>
         {images.map((img, index) => (
           <div key={index} className="px-4">
-              <a className="h-40 flex justify-center items-center"href={img.link}>
+              {/* <a className="h-40 flex justify-center items-center"href={img.link}> */}
                 <img  src={img.img} alt={`Slide ${index}`} className="w-full h-auto block" />
-              </a>
+              {/* </a> */}
             
           </div>
         ))}

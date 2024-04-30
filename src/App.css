@@ -1,3 +1,17 @@
+.navLink {
+  width: 100px;
+  text-align: center;
+}
+
+.active {
+  background-color: #1e293b; /* Set background color to cyan */
+  color: white;
+}
+
+.hover\:bg-cyan-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
 .App {
   text-align: center;
 }
@@ -37,8 +51,8 @@
   }
 }
 
-px-3 py-2 rounded-md border-cyan-900 hover:bg-cyan-800 hover:text-white text-cyan-900
-.simple-button {
+/* px-3 py-2 rounded-md border-cyan-900 hover:bg-cyan-800 hover:text-white text-cyan-900 */
+/* .simple-button {
   padding: 3px 2px;
   border-radius: 2px;
   color: cyan.900;
@@ -47,4 +61,4 @@ px-3 py-2 rounded-md border-cyan-900 hover:bg-cyan-800 hover:text-white text-cya
   border: 2px solid cyan.800;
   border-radius: 2px;
   color: white;
-}
+} */
