@@ -7,7 +7,7 @@ import { faAngleDown, faAngleRight, faAngleUp, faBars, faTimes } from '@fortawes
 const DrawerMenu = () => {
   // An example list of topics and subtopics
   const menuItems = [
-    { topic: 'Home', subTopics: [] },
+    // { topic: 'Home', subTopics: [] },
     { topic: 'Topic1', subTopics: ['SubTopic1', 'SubTopic2', 'SubTopic3','SubTopic4', 'SubTopic5', 'SubTopic6','SubTopic7', 'SubTopic8', 'SubTopic9'] },
     { topic: 'Topic2', subTopics: ['SubTopic1', 'SubTopic2', 'SubTopic3','SubTopic4', 'SubTopic5', 'SubTopic6','SubTopic7', 'SubTopic8', 'SubTopic9'] },
     { topic: 'Topic3', subTopics: ['SubTopic1', 'SubTopic2', 'SubTopic3','SubTopic4', 'SubTopic5', 'SubTopic6','SubTopic7', 'SubTopic8', 'SubTopic9'] },
@@ -45,7 +45,12 @@ const DrawerMenu = () => {
 
   return (
     <div className="bg-slate-800 min-w-max">
+       
       <ul className="flex flex-wrap items-center justify-around space-y-2 navtopic">
+        <div className='homenav'>
+        <Link to="/" className='h-1 '>Home</Link>
+        </div>
+    
         {menuItems.map((item, index) => (
           
           //  <Link to ="/"> 
@@ -60,19 +65,15 @@ const DrawerMenu = () => {
                <div class="nav-arrow">
             
   {/* Toggle button */}
-  {index === 0 && (
-                 <div className="nav-arrow">
-                   <FontAwesomeIcon icon={activeIndex === 0 ? faTimes : faBars} onClick={() => handleTopicClick(0)} />
-                 </div>
-               )}
+  
                {/* Close button */}
-               {index !== 0 && activeIndex === index && (
+               {  activeIndex === index && (
                  <div className="nav-arrow">
                    <FontAwesomeIcon icon={faTimes} onClick={() => setActiveIndex(null)} />
                  </div>
                )}
                {/* Arrow icon */}
-               {index !== 0 && activeIndex !== index && (
+               {activeIndex !== index && (
                  <div className="nav-arrow">
                    <FontAwesomeIcon icon={faAngleDown} />
                  </div>
@@ -86,11 +87,14 @@ const DrawerMenu = () => {
             {activeIndex === index && (
               <ul  ref={ref} className="absolute top-full left-0 min-w-max bg-slate-700 navsubtopic">
                 {item.subTopics.map((subTopic) => (
-                  <li to="/topic/:subTopic" key={subTopic} className="py-1.5 px-4 hover:bg-gray-500">
-                    {subTopic}
-                    {/* Underline for subtopic */}
+<Link to={`/${item.topic}/${subTopic}`}>
+<li  key={subTopic} 
+className="py-1.5 px-4 hover:bg-gray-500">
+{subTopic}
+  </li>
+</Link>
+  
                     
-                  </li>
                 ))}
               </ul>
             )}

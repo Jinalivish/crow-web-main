@@ -1,13 +1,15 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, useParams } from 'react-router-dom';
 
-import SubTopic from '../components/SubTopic';
+// import SubTopic from '../components/SubTopic';
 
 const TopicPage = () => {
-  //params (topic) id
+  const {subtopic} = useParams();
 
   return (
-    <Route path='/:subTopicId' element={<SubTopic/>}/> 
+   <div className="p-8">
+    <h1>{subtopic}</h1>
+   </div>
   );
 };
 

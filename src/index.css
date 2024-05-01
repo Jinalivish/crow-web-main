@@ -43,17 +43,33 @@ display: none;
   padding-left: .5rem;
 }
 
+.hover\:Cardhover:hover {
+  color: #5b93ca !important;
+}
+
 /* mobile view */
 @media (max-width:835px)
 {
   .nav-arrow
 {
 display: unset !important;
-padding-right: 14px;
+padding-right: 3px;
 
 }
+.homenav {
+  /* border-bottom: solid rgb(0 0 0 / var(--tw-bg-opacity)) !important;
+    border-width: 1px 173px;
+    padding-bottom: 4px; */
+    border: 0.25rem solid rgb(0 0 0 / var(--tw-bg-opacity)) !important;
+  
+  border-top:unset !important;
+  border-left:unset !important;
+  border-right:unset !important;
+}
   .navtopic{
-    display: inline;
+    display: block;
+    padding-left: 13px;
+    padding-right: 13px;
   }
   .navsubtopic{
     display: contents;
